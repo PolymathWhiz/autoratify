@@ -7,7 +7,7 @@ module.exports = class Validator {
 
   static validatePhoneNumber(phone, length) {
     if (!phone || !length) {
-      throw new Error("Phone number or lenght is missing");
+      throw new Error("Phone number or length is missing");
     }
     const regex = /^[0-9]{11}$/;
 
@@ -16,14 +16,14 @@ module.exports = class Validator {
 
   static validatePassword(password, length) {
     if (!password || !length) {
-      throw new Error("Password or lenght is missing");
+      throw new Error("Password or length is missing");
     }
     return password.length >= `${Number(length)}` ? true : false;
   }
 
   static validateLength(text, length) {
     if (!text || !length) {
-      throw new Error("Password or lenght is missing");
+      throw new Error("Password or length is missing");
     }
     return text.length < `${Number(length)}` ? true : false;
   }
