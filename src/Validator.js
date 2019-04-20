@@ -9,16 +9,22 @@ module.exports = class Validator {
     if (!phone || !length) {
       throw new Error("Phone number or lenght is missing");
     }
-    const regex = /^[0-9]{`${length}`}$/;
+    const regex = /^[0-9]{11}$/;
 
     return regex.test(phone);
   }
 
   static validatePassword(password, length) {
-    return password.length >= `${length}` ? true : false;
+    if (!password || !length) {
+      throw new Error("Password or lenght is missing");
+    }
+    return password.length >= `${Number(length)}` ? true : false;
   }
 
   static validateLength(text, length) {
-    return text.length < `${length}` ? true : false;
+    if (!text || !length) {
+      throw new Error("Password or lenght is missing");
+    }
+    return text.length < `${Number(length)}` ? true : false;
   }
 };
