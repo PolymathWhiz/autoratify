@@ -5,8 +5,8 @@ module.exports = class Validator {
     return regex.test(String(email).toLowerCase());
   }
 
-  static validatePhoneNumber(phone, length) {
-    if (!phone || !length) {
+  static validatePhoneNumber(phone) {
+    if (!phone) {
       throw new Error("Phone number or length is missing");
     }
     const regex = /^[0-9]{11}$/;
