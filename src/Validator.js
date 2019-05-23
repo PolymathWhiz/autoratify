@@ -5,13 +5,12 @@ module.exports = class Validator {
     return regex.test(String(email).toLowerCase());
   }
 
-  static validatePhoneNumber(phone) {
-    if (!phone) {
+  static validatePhoneNumber(phone, length) {
+    if (!phone || !length) {
       throw new Error("Phone number or length is missing");
     }
-    const regex = /^[0-9]{11}$/;
 
-    return regex.test(phone);
+    length === 11 ? /^[0-9]{11}$/.test(phone) : /^[0-9]{10}$/.test(phone);
   }
 
   static validatePassword(password, length) {

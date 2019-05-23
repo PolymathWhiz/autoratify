@@ -10,7 +10,7 @@ A zero dependency javascript validation library.
 
 ## Avaliable helper methods
 
-1. `validatePhoneNumber(phoneNumber)` - This validates a Nigerian phone number without the international code
+1. `validatePhoneNumber(phoneNumber, length)` - This validates if a phone number matches a length without the international code
 
 2. `validateEmail(email)` - This validates a for a valid email and returns false if the email passed is invalid.
 
